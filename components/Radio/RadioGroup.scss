@@ -1,0 +1,25 @@
+$RadioGroup-radio-margin: $size-small;
+
+.RadioGroup-legend {
+  margin-bottom: $size-small;
+}
+
+.RadioGroup-radios {
+  display: flex;
+  flex-direction: column;
+}
+
+.RadioGroup-radio:not(:first-child) {
+  margin-top: $RadioGroup-radio-margin;
+}
+
+.RadioGroup.inline {
+  .RadioGroup-radios {
+    flex-direction: row;
+  }
+
+  .RadioGroup-radio:not(:first-child) {
+    margin-top: 0;
+    margin-left: $RadioGroup-radio-margin;
+  }
+}

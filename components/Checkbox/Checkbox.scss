@@ -1,0 +1,55 @@
+$Checkbox-box-size: $size-small;
+
+.Checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Checkbox-input {
+  @include VisuallyHidden;
+}
+
+.Checkbox-label {
+  margin-left: calc(#{$Checkbox-box-size} + #{$size-xsmall});
+  color: black;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: $Checkbox-box-size;
+    height: $Checkbox-box-size;
+    background: $white;
+    border: 1px solid black;
+    transform: translateY(-50%);
+  }
+}
+
+.Checkbox-input:checked {
+  ~ .Checkbox-label::after {
+    content: "\2713";
+    position: absolute;
+    top: calc(50% + 1px);
+    left: 0;
+    width: $Checkbox-box-size;
+    color: black;
+    text-align: center;
+    transform: translateY(-50%);
+  }
+}
+
+.Checkbox:hover,
+.Checkbox-input:checked ~ {
+  .Checkbox-label::before {
+    box-shadow: 0 0 0 1px black;
+  }
+}
+
+.Checkbox-input:focus ~ {
+  .Checkbox-label {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,43 @@
+$Radio-ball-borderWidth: 1px;
+
+.Radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Radio-input {
+  @include VisuallyHidden;
+}
+
+.Radio-label {
+  margin-left: calc(#{$size-small} + #{$size-xsmall});
+  color: black;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: calc(#{$size-small} - 2px);
+    height: calc(#{$size-small} - 2px);
+    background-color: $white;
+    border: 2px solid $white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 $Radio-ball-borderWidth black;
+    transform: translateY(-50%);
+  }
+}
+
+.Radio-input:focus,
+.Radio-input:checked {
+  ~ .Radio-label::before {
+    background-color: $light-navy-blue;
+    ball-shadow: 0 0 0 $Radio-ball-borderWidth $light-navy-blue;
+  }
+}
+
+.Radio-input:checked ~ .Radio-label {
+  color: $light-navy-blue;
+}

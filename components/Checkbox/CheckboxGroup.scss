@@ -1,0 +1,23 @@
+.CheckboxGroup-legend {
+  margin-bottom: $size-small;
+}
+
+.CheckboxGroup-checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.CheckboxGroup-checkbox:not(:first-child) {
+  margin-top: $size-small;
+}
+
+.CheckboxGroup.inline {
+  .CheckboxGroup-checkboxes {
+    flex-direction: row;
+  }
+
+  .CheckboxGroup-checkbox:not(:first-child) {
+    margin-top: 0;
+    margin-left: $size-small;
+  }
+}

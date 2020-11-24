@@ -1,0 +1,44 @@
+.Search-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.Search-input {
+  flex: 1 0 auto;
+  padding: $size-xxsmall;
+  margin: 0;
+  border: 0;
+  box-shadow: 0 0 0 1px cadetblue;
+  outline: 0;
+  font-size: $size-small;
+  line-height: $size-base;
+  -webkit-appearance: textfield;
+
+  @include Placeholder {
+    color: gray;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 1px chartreuse;
+  }
+}
+
+.Search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: $size-xxsmall;
+  margin: 0;
+  background-color: cadetblue;
+  box-shadow: 0 0 0 1px cadetblue;
+  cursor: pointer;
+  outline: 0;
+  font-size: $size-small;
+  line-height: $size-base;
+}
+
+.Search-hidden {
+  @include VisuallyHidden;
+}

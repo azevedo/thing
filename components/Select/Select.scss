@@ -1,0 +1,41 @@
+$Select-arrow-width: 16px;
+
+.Select {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: $size-xsmall;
+    width: 0;
+    height: 0;
+    border-color: black transparent transparent;
+    border-style: solid;
+    border-width: 10px calc(#{$Select-arrow-width} / 2) 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+}
+
+.Select-label {
+  @include VisuallyHidden;
+}
+
+.Select-input {
+  padding-top: $size-xsmall;
+  padding-right: calc(#{$Select-arrow-width} + #{$size-xsmall} * 2);
+  padding-bottom: $size-xsmall;
+  padding-left: $size-xsmall;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: $size-xsmall;
+  font-size: $size-small;
+  appearance: none;
+
+  &:focus {
+    box-shadow: 0 0 0 2px lightskyblue;
+  }
+}

@@ -1,0 +1,36 @@
+.TextInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.TextInput-label {
+  margin-bottom: $size-xxxsmall;
+}
+
+.TextInput-input {
+  padding: $size-xxsmall;
+  border: 1px solid black;
+  outline: 0;
+  font-size: $size-small;
+  line-height: $size-base;
+
+  &:focus {
+    border-color: deepskyblue;
+    box-shadow: 0 0 0 1px deepskyblue;
+  }
+}
+
+.TextInput.required {
+  .TextInput-label::after {
+    content: "*";
+    display: inline-block;
+    color: crimson;
+    font-size: $size-small;
+    line-height: $size-base;
+  }
+
+  .TextInput-input:focus {
+    border-color: crimson;
+    box-shadow: 0 0 0 1px crimson;
+  }
+}
